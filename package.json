@@ -1,7 +1,7 @@
 {
   "name": "personal-portfolio",
   "version": "0.1.0",
-  "homepage": "https://zhiqin-he.github.io/Portfolio",
+  "homepage": "https://zhiqin-he.github.io/Professional-Portfolio",
   "private": true,
   "dependencies": {
     "@emotion/react": "^11.10.5",

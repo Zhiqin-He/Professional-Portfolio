@@ -1,9 +1,8 @@
 import React, {useEffect, useRef, useState} from "react";
-import {useDispatch, useSelector} from "react-redux";
+import {useSelector} from "react-redux";
 
 import './navbar.css';
 
-import ColorModal from "./ColorModal";
 import Routes from "./Routes";
 
 import PersonalData from "../../Data/PersonalData";

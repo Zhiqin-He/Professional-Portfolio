@@ -10,7 +10,7 @@ import { useSelector } from "react-redux";
 
 function Home(props) {
 
-    const nonThemeColor = useSelector(state => state.nonThemeColor);
+    // const nonThemeColor = useSelector(state => state.nonThemeColor);
     const uiColor=useSelector(state=>state.uiColor);
     function handleTyper() {
         let textItems = autoTypeData;

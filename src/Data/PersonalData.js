@@ -1,13 +1,12 @@
 const PersonalData = {
-    firstName: "Abhishek",
-    lastName: "Kumar",
-    nickName:"<  killer - abhi >",
-    mobNo:"+91 8299069282",
-    email:"abhi09148299@gmail.com",
-    address:"India",
-    aboutMe:"Hi Everyone, I am Abhishek Kumar from Uttar Pradesh, India.I learned C, C++, Python, JavaScript etc, Worked with libraries & frameworks like ReactJS, NodeJS. Have a keen knowledge of databases like MySQL, MongoDB and Firebase. Eager to contribute to innovative projects and gain hands-on experience in a dynamic and collaborative",
-    resumeLink:'https://drive.google.com/file/d/1vfnzDcN4uATaNZ7cc9kdKvep9ZBUN_be/view?usp=sharing',
+    firstName: "Zhiqin",
+    lastName: "He",
+    mobNo:"+1 571-495-7863",
+    email:"zhiqinhe159293@gmail.com",
+    address:"Virginia, United States",
+    aboutMe:"I’m a passionate software engineer who loves solving problems and building things with code. I enjoy working with Java, JavaScript, Python, C, and C++, and I’m always looking for new challenges to push my skills further. Collaboration is something I thrive on—I’ve worked in team environments where I’ve learned how important communication and adaptability are. Utilizing tools like Docker and GitHub, I focus on writing clean, maintainable code while embracing an engineering mindset that values innovation. I’m eager to apply my skills in a dynamic roles where I can learn from industry professionals and contribute to impactful projects—let’s connect!",
+    resumeLink:'https://drive.google.com/file/d/1Puf27JcDq8aHomrl3rsQiHjyQ2KTQ37n/view?usp=sharing',
     imageUrl:''
 }
-export const autoTypeData=['3rd Year IT Grad', 'MERN Stack Developer','Flutter App Developer', 'Open Source Contributor'];
+export const autoTypeData=['Software Engineer', 'Cornell University Graduate','AI Explorer', 'Open Source Contributor'];
 export default PersonalData;

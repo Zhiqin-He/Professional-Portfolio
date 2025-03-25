@@ -1,61 +1,71 @@
-.contactMe{
+.aboutMe {
     padding-top: 5rem;
     margin: 0rem auto;
-    /* background-color: aqua; */
     width: 90%;
     display: flex;
     justify-content: space-around;
 }
-.avatar{
+
+.avatar {
     display: flex;
     align-items: center;
     justify-content: flex-start;
     /* background-color: aquamarine; */
     /* width: 50%; */
 }
-.avatar img{
+
+.avatar img {
     margin-top: 2rem;
-    border: 5px solid;
     border-radius: 50%;
-    height: 25rem;
-    width: 25rem;
+    background: linear-gradient(45deg, #6a0dad, #2176AE);
+    padding: 5px;
+    height: 23rem;
+    width: 23rem;
     object-fit: cover;
     /* animation: renderFromLeft 1s ease forwards; */
 }
-.contactCard{
+
+.introCard {
     margin-top: 4rem;
+    margin-bottom: 4rem;
     text-align: center;
-    width: 40%;
+    width: 50%;
     /* animation: renderFromRight 1s ease forwards; */
 }
-.contactCard h1{
-    font-size: 3rem;
+
+.introCard h1 {
+    font-size: 2.5rem;
 }
-.contactCard div{
+
+.introCard div {
     margin-top: 1rem;
     font-weight: 500;
-    font-size: 1.5rem;
+    font-size: 1.45rem;
 }
-.contactLinks{
+
+.contactLinks {
     display: flex;
     justify-content: center;
 }
-.links{
+
+.links {
     display: flex;
     justify-content: space-between;
     align-items: center;
     width: 20rem;
 }
-.resumeBtn{
+
+.resumeBtn {
     margin-top: 2rem;
 }
 
-@media (max-width:768px) {
-    .contactMe{
+@media (max-width: 768px) {
+    .aboutMe {
         flex-direction: column;
         padding-top: 2rem;
     }
-    .avatar{
+
+    .avatar {
         display: flex;
         align-items: center;
         justify-content: flex-start;
@@ -63,32 +73,35 @@
         /* width: 50%; */
         margin: 2rem auto;
     }
-    .avatar img{
+
+    .avatar img {
         height: 15rem;
         width: 15rem;
     }
-    .contactCard{
+
+    .introCard {
         margin: 0rem auto;
         width: 90%;
     }
 }
 
 @keyframes renderFromLeft {
-    0%{
+    0% {
         opacity: 0;
         transform: translateX(-100%);
     }
-    100%{
+    100% {
         opacity: 1;
         transform: translateX(0);
     }
 }
+
 @keyframes renderFromRight {
-    0%{
+    0% {
         opacity: 0;
         transform: translateX(100%);
     }
-    100%{
+    100% {
         opacity: 1;
         transform: translateX(0);
     }

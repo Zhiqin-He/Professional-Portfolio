@@ -43,7 +43,8 @@ const Navbar = () => {
     return (
         <div className="main">
             <div className="navbar" style={{backgroundColor: bgColor}}>
-                <div className="logoContainer">
+                <div className="logo-container">
+                    <span className="wave-hand">👋</span>
                     <div id="logo">
                         {PersonalData.firstName}&nbsp;&nbsp;{PersonalData.lastName}
                     </div>

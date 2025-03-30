@@ -5,7 +5,7 @@ import './app.css';
 import Navbar from './components/Navbar/Navbar';
 import Home from './components/Home/Home';
 import AboutMe from './components/About Me/AboutMe';
-// import Projects from './components/Projects/Project';
+import Projects from './components/Projects/Project';
 import {useSelector} from 'react-redux';
 // import {CSSTransition, TransitionGroup} from 'react-transition-group';
 // import {Route, Switch, Redirect, useLocation} from "react-router-dom";
@@ -19,7 +19,7 @@ const App = () => {
             <Navbar/>
             <Home/>
             <AboutMe/>
-            {/*<Projects/>*/}
+            <Projects/>
             {/*<Skills/>*/}
             {/*<Experience/>*/}
             {/*<ContactMe/>*/}

@@ -1,0 +1,216 @@
+
+.experienceMain {
+    width: 80%;
+    margin-top: 5rem;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.experienceMain h1 {
+    text-align: center;
+    font-size: 3rem;
+    font-weight: 800;
+}
+
+.expSectImage {
+    margin: 3rem auto;
+    height: 30rem;
+    width: 30rem;
+    /* animation: renderFromLeft 0.5s ease forwards; */
+}
+
+.expSectImage img {
+    height: 30rem;
+    object-fit: cover;
+}
+
+.expSectCard {
+    margin-top: 5rem;
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    align-items: center;
+    /* background-color: aqua; */
+    /* animation: renderFromRight 0.5s ease forwards; */
+}
+
+.expSectCard h1 {
+    font-size: 5rem;
+    font-weight: 700;
+}
+
+.expSectCard h2 {
+    font-size: 3rem;
+    font-weight: 700;
+}
+
+.experienceCard {
+    margin-top: 1rem;
+    display: flex;
+    align-items: center;
+}
+
+.centered {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.experienceImage {
+    height: 15rem;
+    width: 15rem;
+    border-radius: 50%;
+    border: 5px solid;
+}
+
+.experienceImage svg {
+    height: 10rem;
+    width: 10rem;
+}
+
+.experienceWrapper {
+    margin-left: 2rem;
+    width: 75%;
+}
+
+.experienceInfo {
+    border-top-left-radius: inherit;
+    border-top-right-radius: inherit;
+    padding: 1rem;
+    font-weight: 900;
+}
+
+.experienceInfo h1 {
+    text-align: left;
+    font-size: 2.2rem;
+}
+
+.experienceInfo h2 {
+    font-size: 1.5rem;
+    margin-top: 1rem;
+}
+
+.experienceInfo h3 {
+    float: right;
+    font-size: 1.5rem;
+}
+
+.details {
+    padding: 1rem;
+    margin-left: 1rem;
+    font-size: 1.4rem;
+    font-weight: 600;
+}
+
+ul li {
+    list-style-type: square;
+    margin-top: 1rem;
+}
+
+@media (max-width: 768px) {
+    .experienceMain {
+        width: 90%;
+        margin-top: 5rem;
+    }
+
+    .experienceCard {
+        flex-direction: column;
+        gap: 2rem;
+    }
+
+    .experienceImage {
+        height: 15rem;
+        width: 15rem;
+        border-radius: 50%;
+    }
+
+    .experienceWrapper {
+        margin-left: 0rem;
+        width: 90%;
+    }
+
+    .experienceInfo h1 {
+        font-size: 1.8rem;
+    }
+
+    .experienceInfo h2 {
+        font-size: 1.4rem;
+    }
+
+    .experienceInfo h3 {
+        font-size: 1.2rem;
+    }
+}
+
+@keyframes load {
+    0% {
+        width: 0%;
+    }
+    100% {
+        width: 100%;
+    }
+}
+
+@media (max-width: 768px) {
+    .education {
+        padding-top: 0rem;
+    }
+
+    .expSectImage {
+        height: 15rem;
+        width: 20rem;
+    }
+
+    .expSectImage img {
+        height: 20rem;
+        width: 20rem;
+        object-fit: contain;
+    }
+
+    .expSectCard {
+        margin-top: -2rem;
+        width: 100%;
+    }
+
+    .expSectCard h1 {
+        /* text-align: center; */
+        font-size: 4rem;
+        font-weight: 700;
+    }
+
+    .expSectCard h2 {
+        /* margin-top: 1.5rem; */
+        /* text-align: center; */
+        font-size: 1.5rem;
+        font-weight: 700;
+    }
+}
+
+@media (max-width: 768px) {
+    .app-content {
+        margin-top: 4rem;
+    }
+
+}
+
+@keyframes renderFromLeft {
+    0% {
+        opacity: 0;
+        transform: translateX(-100%);
+    }
+    100% {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+@keyframes renderFromRight {
+    0% {
+        opacity: 0;
+        transform: translateX(100%);
+    }
+    100% {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}

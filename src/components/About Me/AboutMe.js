@@ -6,7 +6,7 @@ import SocialLinks from '../SocialLinks/SocialLinks';
 import Button from "../UI/Button";
 import {useSelector} from 'react-redux';
 
-import ImageUrl from "../../Data/dp.jpeg";
+import ImageUrl from "./dp.jpeg";
 
 const AboutMe = () => {
 

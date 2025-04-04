@@ -8,6 +8,8 @@ import AboutMe from './components/About Me/AboutMe';
 import Projects from './components/Projects/Project';
 import Skills from './components/Skills/Skills';
 import Experience from './components/Experience/Experience';
+import ContactMe from './components/Contact Me/ContactMe';
+import Footer from "./components/Footer/Footer";
 import {useSelector} from 'react-redux';
 
 const App = () => {
@@ -22,7 +24,8 @@ const App = () => {
             <Projects/>
             <Skills/>
             <Experience/>
-            {/*<ContactMe/>*/}
+            <ContactMe/>
+            <Footer/>
         </div>
     );
 };

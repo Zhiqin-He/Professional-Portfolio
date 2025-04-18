@@ -3,19 +3,19 @@ import React from "react";
 import classes from "./ContactMe.module.css";
 
 import LocationOnIcon from '@mui/icons-material/LocationOn';
-import SendIcon from '@mui/icons-material/Send';
 import CallIcon from '@mui/icons-material/Call';
 
 import PersonalData from "../../Data/PersonalData";
 import {useSelector} from "react-redux";
+import {LinkedIn} from "@mui/icons-material";
 
-const data = [PersonalData.email, PersonalData.mobNo];
+const data = [PersonalData.email];
 
 const ContactMe = (props) => {
 
     const uiColor = useSelector(state => state.uiColor);
     const nonThemeColor = useSelector(state => state.nonThemeColor);
-    const Icons = [<LocationOnIcon fontSize="large"/>, <SendIcon fontSize="large"/>, <CallIcon fontSize="large"/>];
+    const Icons = [<LocationOnIcon fontSize="large"/>, <LinkedIn fontSize="large"/>, <CallIcon fontSize="large"/>];
 
     const contactDetails = data.map((item, index) =>
         <div className={classes.contactCard} style={{color: nonThemeColor}} key={index}>
@@ -34,7 +34,7 @@ const ContactMe = (props) => {
                         hello, please feel free to contact me!
                     </p>
                 </div>
-                <div className={classes.contactComponent}>
+                <div className={classes.contactComponent} style={{display: 'flex'}}>
                     {contactDetails}
                 </div>
             </div>

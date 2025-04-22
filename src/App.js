@@ -11,21 +11,25 @@ import Experience from './components/Experience/Experience';
 import ContactMe from './components/Contact Me/ContactMe';
 import Footer from "./components/Footer/Footer";
 import {useSelector} from 'react-redux';
+import FlockCanvas from "./components/Background/FlockCanvas";
 
 const App = () => {
     // Accessing the theme from the Redux store
     const theme = useSelector((state) => state.theme);
 
     return (
-        <div className="App" style={theme}>
-            <Navbar/>
-            <Home/>
-            <AboutMe/>
-            <Projects/>
-            <Skills/>
-            <Experience/>
-            <ContactMe/>
-            <Footer/>
+        <div style={{position: 'relative'}}>
+            <FlockCanvas/>
+            <div className="App" style={{position: 'absolute', zIndex: 2, color:theme.color}}>
+                <Navbar/>
+                <Home/>
+                <AboutMe/>
+                <Projects/>
+                <Skills/>
+                <Experience/>
+                <ContactMe/>
+                <Footer/>
+            </div>
         </div>
     );
 };

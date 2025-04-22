@@ -17,7 +17,7 @@ const ProjectItem = (props) => {
         description = " project description";
     }
     if (description.length > 120) {
-        description = description.substr(0, 120);
+        description = description.substring(0, 110);
         description = description + " ... ";
     }
 

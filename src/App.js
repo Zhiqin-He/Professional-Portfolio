@@ -20,7 +20,7 @@ const App = () => {
     return (
         <div style={{position: 'relative'}}>
             <FlockCanvas/>
-            <div className="App" style={{position: 'absolute', zIndex: 2, color:theme.color}}>
+            <div className="App" style={{position: 'absolute', zIndex: 2, color: theme.color}}>
                 <Navbar/>
                 <Home/>
                 <AboutMe/>

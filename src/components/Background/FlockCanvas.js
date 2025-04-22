@@ -4,7 +4,7 @@ import {useRef, useEffect} from 'react';
 import {useSelector} from "react-redux";
 
 const FlockCanvas = () => {
-    const theme = useSelector((state) => state.theme);
+    const theme = useSelector(state => state.theme);
     const canvasRef = useRef(null);
     const mouse = useRef({x: null, y: null});
     useEffect(() => {
@@ -42,6 +42,16 @@ const FlockCanvas = () => {
                 if (this.position.y < 0) this.position.y = canvas.height;
             }
 
+            processSteering(steering) {
+                normalize(steering);
+                steering.x *= this.maxSpeed;
+                steering.y *= this.maxSpeed;
+                steering.x -= this.velocity.x;
+                steering.y -= this.velocity.y;
+                limit(steering, this.maxForce);
+                return steering
+            }
+
             align(boids) {
                 let perception = 50;
                 let steering = {x: 0, y: 0};
@@ -57,12 +67,7 @@ const FlockCanvas = () => {
                 if (total > 0) {
                     steering.x /= total;
                     steering.y /= total;
-                    normalize(steering);
-                    steering.x *= this.maxSpeed;
-                    steering.y *= this.maxSpeed;
-                    steering.x -= this.velocity.x;
-                    steering.y -= this.velocity.y;
-                    limit(steering, this.maxForce);
+                    steering = this.processSteering(steering)
                 }
                 return steering;
             }
@@ -84,12 +89,7 @@ const FlockCanvas = () => {
                     steering.y /= total;
                     steering.x -= this.position.x;
                     steering.y -= this.position.y;
-                    normalize(steering);
-                    steering.x *= this.maxSpeed;
-                    steering.y *= this.maxSpeed;
-                    steering.x -= this.velocity.x;
-                    steering.y -= this.velocity.y;
-                    limit(steering, this.maxForce);
+                    steering = this.processSteering(steering)
                 }
                 return steering;
             }
@@ -114,12 +114,7 @@ const FlockCanvas = () => {
                 if (total > 0) {
                     steering.x /= total;
                     steering.y /= total;
-                    normalize(steering);
-                    steering.x *= this.maxSpeed;
-                    steering.y *= this.maxSpeed;
-                    steering.x -= this.velocity.x;
-                    steering.y -= this.velocity.y;
-                    limit(steering, this.maxForce);
+                    steering = this.processSteering(steering)
                 }
                 return steering;
             }
@@ -193,7 +188,7 @@ const FlockCanvas = () => {
         const animate = () => {
             canvas.width = window.innerWidth;
             canvas.height = window.innerHeight;
-            ctx.fillStyle = '#f9f9f9'; // Light background
+            ctx.fillStyle = theme.backgroundColor
             ctx.fillRect(0, 0, canvas.width, canvas.height);
 
             for (let boid of boids) {
@@ -210,9 +205,9 @@ const FlockCanvas = () => {
         return () => {
             window.removeEventListener('mousemove', handleMouseMove);
         };
-    }, []);
+    }, [theme.backgroundColor]);
 
-    return <canvas ref={canvasRef} style={{position: 'fixed', zIndex: -100, ...theme}} className={classes.flockCanvas}/>;
+    return <canvas ref={canvasRef} style={{position: 'fixed', zIndex: -100}} className={classes.flockCanvas}/>;
 };
 
 export default FlockCanvas;

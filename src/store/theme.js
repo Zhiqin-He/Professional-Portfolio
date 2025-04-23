@@ -6,6 +6,8 @@ const initialThemeState = {
     theme: {
         color: 'rgb(0, 31, 63)',
         backgroundColor: "rgb(237, 249, 254)",
+        backgroundColorCanvasAnimate: "rgba(237, 249, 254, .2)",
+        boidColor: 'rgba(28,106,222,0.2)'
     },
     nonThemeColor: 'black'
 };
@@ -23,6 +25,7 @@ const themeSlice = createSlice({
                 state.mode = 'dark';
                 state.theme.color = 'cyan';
                 state.theme.backgroundColor = 'rgb(0, 31, 63)';
+                state.theme.boidColor = 'rgba(50, 60, 80, 0.2)';
                 state.nonThemeColor = 'white';
             } else {
                 state.mode = 'light';

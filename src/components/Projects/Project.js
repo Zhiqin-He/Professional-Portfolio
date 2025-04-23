@@ -9,10 +9,15 @@ import {useSelector} from "react-redux";
 
 const Projects = (props) => {
     const nonThemeColor = useSelector(state => state.nonThemeColor);
+    const backgroundColor = useSelector(state => state.theme.backgroundColor);
     let projects = ProjectsData.DUMMY_PROJECTS;
     return (
         <div id="projects">
-            <h1 className={styles.projectHeading} style={{color: nonThemeColor}}>My Projects</h1>
+            <h1 className={styles.projectHeading} style={{
+                color: nonThemeColor,
+                backgroundColor: backgroundColor,
+                boxShadow: '0 0 .5em .5em ' + backgroundColor
+            }}>My Projects</h1>
             <div className={styles.projectList}>
                 {projects.map((item, index) => {
                     return <ProjectItem key={index} project={item}/>

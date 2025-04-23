@@ -12,7 +12,10 @@ const Skills = (props) => {
 
     return (
         <div id="skills" className={classes.mainCard}>
-            <h1 style={{color: nonThemeColor}}>My <span style={{color: uiColor}}>Skills</span></h1>
+            <h1 style={{
+                color: nonThemeColor, backgroundColor: backgroundColor,
+                boxShadow: '0 0 .5em .5em ' + backgroundColor
+            }}>My <span style={{color: uiColor}}>Skills</span></h1>
             <div className={classes.skillSetCard} style={{color: nonThemeColor}}>
                 {skills.map((Item, index) =>
                     <div className={classes.skillItem} style={{borderColor: uiColor, backgroundColor: backgroundColor}}

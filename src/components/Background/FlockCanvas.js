@@ -10,14 +10,22 @@ const FlockCanvas = () => {
     useEffect(() => {
         const canvas = canvasRef.current;
         const ctx = canvas.getContext('2d');
-        canvas.width = window.innerWidth;
-        canvas.height = window.innerHeight;
+
+        const resize = () => {
+            canvas.width = window.innerWidth;
+            canvas.height = window.innerHeight;
+
+            ctx.fillStyle = theme.backgroundColor;
+            ctx.fillRect(0, 0, canvas.width, canvas.height);
+        };
+        resize();
 
         const handleMouseMove = (e) => {
             mouse.current.x = e.clientX;
             mouse.current.y = e.clientY;
         };
 
+        window.addEventListener('resize', resize);
         window.addEventListener('mousemove', handleMouseMove);
 
         class Boid {
@@ -53,7 +61,7 @@ const FlockCanvas = () => {
             }
 
             align(boids) {
-                let perception = 50;
+                let perception = 40;
                 let steering = {x: 0, y: 0};
                 let total = 0;
                 for (let other of boids) {
@@ -145,8 +153,8 @@ const FlockCanvas = () => {
                 const separation = this.separation(boids);
                 const avoid = this.avoidMouse();
 
-                this.acceleration.x = alignment.x + cohesion.x + separation.x + avoid.x;
-                this.acceleration.y = alignment.y + cohesion.y + separation.y + avoid.y;
+                this.acceleration.x = alignment.x + cohesion.x + separation.x * 1.25 + avoid.x;
+                this.acceleration.y = alignment.y + cohesion.y + separation.y * 1.25 + avoid.y;
             }
 
             update() {
@@ -160,26 +168,10 @@ const FlockCanvas = () => {
             }
 
             draw(ctx) {
-                const angle = Math.atan2(this.velocity.y, this.velocity.x);
-                const size = 8;
-
-                ctx.save();
-                ctx.translate(this.position.x, this.position.y);
-                ctx.rotate(angle);
-
                 ctx.beginPath();
-                ctx.moveTo(size, 0);
-                ctx.lineTo(-size * 0.6, size * 0.4);
-                ctx.lineTo(-size * 0.6, -size * 0.4);
-                ctx.closePath();
-
-                ctx.fillStyle = 'rgba(50, 60, 80, 0.2)'; // semi-transparent tech gray
+                ctx.fillStyle = theme.boidColor;
+                ctx.arc(this.position.x, this.position.y, 3, 0, Math.PI * 2);
                 ctx.fill();
-
-                ctx.strokeStyle = 'rgba(50, 60, 80, 0.5)';
-                ctx.stroke();
-
-                ctx.restore();
             }
 
         }
@@ -203,10 +195,7 @@ const FlockCanvas = () => {
         const boids = Array.from({length: 100}, () => new Boid());
 
         const animate = () => {
-            canvas.width = window.innerWidth;
-            canvas.height = window.innerHeight;
-
-            ctx.fillStyle = theme.backgroundColor
+            ctx.fillStyle = theme.backgroundColorCanvasAnimate;
             ctx.fillRect(0, 0, canvas.width, canvas.height);
 
             for (let boid of boids) {
@@ -222,10 +211,12 @@ const FlockCanvas = () => {
 
         return () => {
             window.removeEventListener('mousemove', handleMouseMove);
+            window.removeEventListener('resize', handleMouseMove);
         };
-    }, [theme.backgroundColor]);
+    }, [theme]);
 
     return <canvas ref={canvasRef} style={{position: 'fixed', zIndex: -100}} className={classes.flockCanvas}/>;
 };
 
 export default FlockCanvas;
+

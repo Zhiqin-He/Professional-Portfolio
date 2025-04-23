@@ -7,9 +7,10 @@
 }
 
 .projectHeading {
+    width: fit-content;
+    margin: 7rem auto auto auto;
     font-size: 3rem;
     text-align: center;
-    margin-top: 7rem;
 }
 
 .projectList {

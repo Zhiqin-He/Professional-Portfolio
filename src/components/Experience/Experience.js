@@ -13,7 +13,10 @@ function Experience(props) {
     return (
         <Fragment>
             <div id="experience" className={classes.experienceMain}>
-                <h1 style={{color: nonThemeColor}}>
+                <h1 style={{
+                    color: nonThemeColor, backgroundColor: backgroundColor,
+                    boxShadow: '0 0 .5em .5em ' + backgroundColor
+                }}>
                     My <span style={{color: uiColor}}>Experiences</span>
                 </h1>
                 {ExperienceData.map((item) =>

@@ -1,5 +1,5 @@
 import React from "react";
-import classes from "./FlockCanvas.css";
+import classes from "./FlockCanvas.module.css";
 import {useRef, useEffect} from 'react';
 import {useSelector} from "react-redux";
 

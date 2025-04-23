@@ -9,11 +9,13 @@ import {useSelector} from 'react-redux';
 import ImageUrl from "./dp.jpeg";
 
 const AboutMe = () => {
-
+    const backgroundColor = useSelector(state => state.theme.backgroundColor);
     const uiColor = useSelector(state => state.uiColor);
+
     return (
         <Fragment>
-            <div className={classes.aboutMe} id='about'>
+            <div className={classes.aboutMe} id='about'
+                 style={{boxShadow: '0 0 1em 1em ' + backgroundColor}}>
                 <div className={classes.avatar}>
                     {/*<img src={ImageUrl} alt="Loading ..." style={{borderColor: uiColor}}/>*/}
                     <img src={ImageUrl} alt="Loading ..."/>

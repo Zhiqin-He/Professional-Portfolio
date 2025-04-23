@@ -11,6 +11,8 @@ import ImageUrl from "./dp.jpeg";
 const AboutMe = () => {
 
     const uiColor = useSelector(state => state.uiColor);
+    const backgroundColor = useSelector(state => state.theme.backgroundColor);
+
     return (
         <Fragment>
             <div className={classes.aboutMe} id='about'>
@@ -18,7 +20,7 @@ const AboutMe = () => {
                     {/*<img src={ImageUrl} alt="Loading ..." style={{borderColor: uiColor}}/>*/}
                     <img src={ImageUrl} alt="Loading ..."/>
                 </div>
-                <div className={classes.introCard}>
+                <div className={classes.introCard} style={{backgroundColor: backgroundColor, boxShadow: '0 0 1em 1em ' + backgroundColor}}>
                     <h1 style={{color: uiColor}}>About Me</h1>
                     <div>
                         {PersonalData.aboutMe}

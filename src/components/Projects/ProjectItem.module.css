@@ -4,7 +4,7 @@
     display: flex;
     justify-content: space-between;
     flex-direction: column;
-    /* background-color: aqua; */
+    /*background-color: aqua;*/
 }
 .itemHeader{
     display: flex;

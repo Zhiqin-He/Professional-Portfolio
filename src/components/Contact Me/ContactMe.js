@@ -15,6 +15,7 @@ const ContactMe = (props) => {
 
     const uiColor = useSelector(state => state.uiColor);
     const nonThemeColor = useSelector(state => state.nonThemeColor);
+    const backgroundColor = useSelector(state => state.theme.backgroundColor);
     const Icons = [<LocationOnIcon fontSize="large"/>, <LinkedIn fontSize="large"/>, <CallIcon fontSize="large"/>];
 
     const contactDetails = data.map((item, index) =>
@@ -23,9 +24,8 @@ const ContactMe = (props) => {
             <div className={classes.contactValue}>{item}</div>
         </div>
     );
-
     return (
-        <div id="contact" className={classes.getInTouch} style={{borderColor: uiColor}}>
+        <div id="contact" className={classes.getInTouch} style={{borderColor: uiColor, backgroundColor: backgroundColor}}>
             <div className={classes.getInTouchCard}>
                 <div className={classes.contactComponent}>
                     <h1 style={{color: nonThemeColor}}>Get In Touch</h1>

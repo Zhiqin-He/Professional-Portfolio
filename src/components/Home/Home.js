@@ -1,16 +1,18 @@
-import React, { useEffect } from "react";
+import React, {useEffect} from "react";
 import Typewriter from 'typewriter-effect/dist/core';
 import profileAvatar from "../asset/logo.png";
 import PersonalData from "../../Data/PersonalData";
 import classes from "./home.module.css";
-import { autoTypeData } from "../../Data/PersonalData";
+import {autoTypeData} from "../../Data/PersonalData";
 
 import SocialLinks from "../SocialLinks/SocialLinks";
-import { useSelector } from "react-redux";
+import {useSelector} from "react-redux";
 
 function Home(props) {
 
-    const uiColor=useSelector(state=>state.uiColor);
+    const uiColor = useSelector(state => state.uiColor);
+    const backgroundColor = useSelector(state => state.theme.backgroundColor);
+
     function handleTyper() {
         let textItems = autoTypeData;
         var autoTyper = document.getElementById('typer');
@@ -21,22 +23,28 @@ function Home(props) {
             loop: true,
         });
     }
+
     useEffect(
         handleTyper
-    ,[]);
+        , []);
     return (
         <main id="home">
             <div className={classes.homeContent}>
-                <h2>Hi, I'm &nbsp;<span id="name" style={{ color: uiColor }}>{PersonalData.firstName}&nbsp;{PersonalData.lastName}</span></h2>
+                <h2 style={{backgroundColor: backgroundColor, boxShadow: '0 0 .5em .5em ' + backgroundColor}}>Hi,
+                    I'm&nbsp;<span id="name"
+                                   style={{color: uiColor}}>{PersonalData.firstName}&nbsp;{PersonalData.lastName}</span>
+                </h2>
                 <div className={classes.avatarImage}>
-                    <img src={profileAvatar} alt="Profile" srcSet="" />
+                    <img src={profileAvatar} alt="Profile" srcSet=""/>
                 </div>
-                <div className={classes.autoText}>
-                    I am a &nbsp; <span id="typer" style={{ color: uiColor }}></span>
+                <div className={classes.autoText}
+                     style={{backgroundColor: backgroundColor, boxShadow: '0 0 .5em .5em ' + backgroundColor}}>
+                    I am a&nbsp;<span id="typer" style={{color: uiColor}}></span>
                 </div>
-                <SocialLinks className={classes.links} />
+                <SocialLinks className={classes.links}/>
             </div>
         </main>
     )
 }
+
 export default Home;

@@ -8,6 +8,7 @@ import Card from "../UI/Card";
 function Experience(props) {
     const nonThemeColor = useSelector(state => state.nonThemeColor);
     const uiColor = useSelector(state => state.uiColor);
+    const backgroundColor = useSelector(state => state.theme.backgroundColor);
 
     return (
         <Fragment>
@@ -17,7 +18,8 @@ function Experience(props) {
                 </h1>
                 {ExperienceData.map((item) =>
                     <div className={classes.experienceCard}>
-                        <div className={`${classes.experienceImage} centered`} style={{borderColor: uiColor}}>
+                        <div className={`${classes.experienceImage} centered`}
+                             style={{borderColor: uiColor, backgroundColor: backgroundColor}}>
                             {item.logo}
                         </div>
                         <Card className={classes.experienceWrapper}>

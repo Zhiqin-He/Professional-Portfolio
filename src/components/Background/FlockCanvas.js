@@ -160,11 +160,28 @@ const FlockCanvas = () => {
             }
 
             draw(ctx) {
+                const angle = Math.atan2(this.velocity.y, this.velocity.x);
+                const size = 8;
+
+                ctx.save();
+                ctx.translate(this.position.x, this.position.y);
+                ctx.rotate(angle);
+
                 ctx.beginPath();
-                ctx.fillStyle = '#333'; // dark boids on light bg
-                ctx.arc(this.position.x, this.position.y, 3, 0, Math.PI * 2);
+                ctx.moveTo(size, 0);
+                ctx.lineTo(-size * 0.6, size * 0.4);
+                ctx.lineTo(-size * 0.6, -size * 0.4);
+                ctx.closePath();
+
+                ctx.fillStyle = 'rgba(50, 60, 80, 0.2)'; // semi-transparent tech gray
                 ctx.fill();
+
+                ctx.strokeStyle = 'rgba(50, 60, 80, 0.5)';
+                ctx.stroke();
+
+                ctx.restore();
             }
+
         }
 
         const distance = (a, b) => Math.sqrt((a.x - b.x) ** 2 + (a.y - b.y) ** 2);
@@ -188,6 +205,7 @@ const FlockCanvas = () => {
         const animate = () => {
             canvas.width = window.innerWidth;
             canvas.height = window.innerHeight;
+
             ctx.fillStyle = theme.backgroundColor
             ctx.fillRect(0, 0, canvas.width, canvas.height);
 

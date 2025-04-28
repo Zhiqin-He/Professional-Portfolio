@@ -9,10 +9,14 @@ import SocialLinks from "../SocialLinks/SocialLinks";
 import {useSelector} from "react-redux";
 
 function ScrollDownIcon() {
+    const nonThemeColor = useSelector(state => state.nonThemeColor);
+    const backgroundColor = useSelector(state => state.theme.backgroundColor);
+
     return (
         <div className={classes.scrollDownContainer}>
-            <div className={classes.scrollDown}>
-                ↓
+            <div className={classes.mouse}
+                 style={{backgroundColor: backgroundColor, boxShadow: '0 0 .5em .5em ' + backgroundColor}}>
+                <div className={classes.wheel} style={{background: nonThemeColor}}/>
             </div>
         </div>
     );

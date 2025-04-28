@@ -8,6 +8,17 @@ import {autoTypeData} from "../../Data/PersonalData";
 import SocialLinks from "../SocialLinks/SocialLinks";
 import {useSelector} from "react-redux";
 
+function ScrollDownIcon() {
+    return (
+        <div className={classes.scrollDownContainer}>
+            <div className={classes.scrollDown}>
+                ↓
+            </div>
+        </div>
+    );
+}
+
+
 function Home(props) {
 
     const uiColor = useSelector(state => state.uiColor);
@@ -44,6 +55,7 @@ function Home(props) {
                 </div>
                 <SocialLinks className={classes.links}/>
             </div>
+            <ScrollDownIcon/>
         </main>
     )
 }

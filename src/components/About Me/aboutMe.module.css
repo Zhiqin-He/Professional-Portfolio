@@ -1,5 +1,5 @@
 .aboutMe {
-    padding-top: 7rem;
+    padding-top: 1rem;
     margin: 0rem auto;
     width: 90%;
     display: flex;
@@ -28,7 +28,7 @@
 .introCard {
     margin-top: 4rem;
     margin-bottom: 2rem;
-    text-align: center;
+    text-align: left;
     width: 50%;
     /* animation: renderFromRight 1s ease forwards; */
 }
@@ -45,7 +45,7 @@
 
 .contactLinks {
     display: flex;
-    justify-content: center;
+    justify-content: left;
 }
 
 .links {

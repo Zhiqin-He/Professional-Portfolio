@@ -1,9 +1,10 @@
 main {
-    height: 100vh;
+    height: 123vh;
     margin-top: -3.5rem;
-    margin-bottom: 4.5rem;
+    margin-bottom: -4.5rem;
 
     display: flex;
+    flex-direction: column;
     align-items: center;
     justify-content: center;
 }
@@ -78,6 +79,26 @@ main {
     border: 4px solid #3b82f6;
     background-image: linear-gradient(145deg, #3b82f6, #1e40af);
     animation: glow 4s ease-in-out infinite alternate;
+}
+
+.scrollDown {
+    font-size: 2rem;
+    animation: bounce 1.5s infinite;
+}
+
+.scrollDownContainer {
+    display: flex;
+    justify-content: center;
+    margin-top: 23vh;
+}
+
+@keyframes bounce {
+    0%, 100% {
+        transform: translateY(0);
+    }
+    50% {
+        transform: translateY(10px);
+    }
 }
 
 /* Subtle Glow Animation */

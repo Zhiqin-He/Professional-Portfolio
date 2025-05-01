@@ -2,8 +2,8 @@ import classes from "./skills.module.css";
 import {CPP, Python, ReactJS, NodeJs, JavaScript, Java, GitHub, Docker} from "../asset/svg/svg";
 import {useSelector} from "react-redux";
 
-const skills = [Java, Python, CPP, JavaScript, ReactJS, NodeJs, GitHub, Docker];
-const skillNames = ["Java", "Python", "C++", "JavaScript", "ReactJS", "NodeJS", "Git", "Docker"];
+const skills = [Java, Python, GitHub, JavaScript, NodeJs, CPP, ReactJS, Docker];
+const skillNames = ["Java", "Python", "Git", "JavaScript", "NodeJS", "C++", "ReactJS", "Docker"];
 const Skills = (props) => {
 
     const uiColor = useSelector(state => state.uiColor);

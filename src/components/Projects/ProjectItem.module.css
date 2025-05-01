@@ -1,4 +1,4 @@
-.projectItem{
+.projectItem {
     width: 30%;
     height: 12rem;
     display: flex;
@@ -6,76 +6,98 @@
     flex-direction: column;
     /* background-color: aqua; */
 }
-.itemHeader{
+
+.itemHeader {
     display: flex;
-    justify-content: space-between;
-}
-.projectItem h2{
-    font-size: 2rem;
-    font-weight: 700;
-}
-.description{
-    font-size: 1.5rem;
-    text-align: justify;
-}
-.controls{
-    display: flex;
-    align-items: center;
-}
-.controls p{
-    font-size: 1.2rem;
-}
-.projectLink{
-    margin-top: auto;
-    /* width: 5rem; */
-    display: none;
     justify-content: space-between;
 }
 
-.projectItem:hover .projectLink{
+.projectItem h2 {
+    font-size: 2rem;
+    font-weight: 700;
+}
+
+.descriptionContainer {
+    padding-top: 1rem;
+    height: 60%;
+    overflow: hidden;
+}
+
+.description {
+    font-size: 1.5rem;
+    text-align: left;
+}
+
+.controls {
+    display: flex;
+    align-items: center;
+}
+
+.controls p {
+    font-size: 1.2rem;
+}
+
+.projectLink {
+    margin-top: auto;
+    /* width: 5rem; */
+    /*display: none;*/
     display: block;
+    justify-content: space-between;
+}
+
+.projectItem:hover .projectLink {
+    /*display: block;*/
     animation: fadeIn 1s ease-in-out normal forwards;
 }
-.projectItem:hover{
+
+.projectItem:hover {
     cursor: pointer;
     animation: zoom 0.2s ease-in-out normal forwards;
 }
-.dateUpdated{
+
+.dateUpdated {
     margin-left: auto;
 }
+
 @keyframes zoom {
-    0%{
+    0% {
         transform: scale(1);
     }
-    100%{
+    100% {
         transform: scale(1.03);
     }
 }
+
 @keyframes fadeIn {
-    0%{
+    0% {
         z-index: 0;
     }
-    100%{
-        z-index:1;
+    100% {
+        z-index: 1;
     }
 }
-@media (max-width:768px) {
-    .projectItem{
+
+@media (max-width: 768px) {
+    .projectItem {
         height: 12rem;
         /* min-width: 40%; */
         min-width: 20rem;
     }
-    .projectItem h2{
+
+    .projectItem h2 {
         font-size: 1.7rem;
     }
-    .description{
+
+    .description {
         margin-top: 1rem;
         font-size: 1.2rem;
     }
-    .controls{
+
+    .controls {
         margin-top: 1rem;
     }
-    .projectLink{
+
+    .projectLink {
         display: block;
     }
 }

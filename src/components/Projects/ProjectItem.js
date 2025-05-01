@@ -24,7 +24,9 @@ const ProjectItem = (props) => {
     return (
         <Card className={classes.projectItem}>
             <h2 style={{color: uiColor}}>{props.project.projectTitle}</h2>
-            <p className={classes.description}>{description}</p>
+            <div className={classes.descriptionContainer}>
+                <p className={classes.description}>{description}</p>
+            </div>
             <div className={classes.controls}>
                 <div className={classes.projectLink}>
                     <a target="_blank" rel="noreferrer" href={props.project.sourceLink}

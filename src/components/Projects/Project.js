@@ -9,7 +9,7 @@ import {useSelector} from "react-redux";
 
 const Projects = (props) => {
     const nonThemeColor = useSelector(state => state.nonThemeColor);
-    let projects = ProjectsData.DUMMY_PROJECTS;
+    let projects = ProjectsData.PROJECT_DATA;
     return (
         <div id="projects">
             <h1 className={styles.projectHeading} style={{color: nonThemeColor}}>My Projects</h1>

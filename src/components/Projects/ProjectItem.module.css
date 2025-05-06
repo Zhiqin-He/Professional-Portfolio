@@ -1,7 +1,7 @@
 .projectItem {
     position: relative;
     width: 30%;
-    height: 12rem;
+    height: 17rem;
     background-size: cover;
     background-position: center;
     overflow: hidden;
@@ -11,6 +11,14 @@
     justify-content: flex-start;
     padding: 1rem;
     transition: transform 0.3s ease;
+}
+
+.projectImage {
+    border-radius: 1rem;
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+    margin-top: .5rem;
 }
 
 .cardContent {

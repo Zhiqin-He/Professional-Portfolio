@@ -11,7 +11,7 @@ const ProjectItem = (props) => {
 
     const uiColor = useSelector(state => state.uiColor);
     const nonThemeColor = useSelector(state => state.nonThemeColor);
-    const backgroundColor = useSelector(state => state.backgroundColor);
+    const backgroundColor = useSelector(state => state.theme.backgroundColorAlpha);
 
     let description = props.project.description;
     if (description === '') {
@@ -27,6 +27,7 @@ const ProjectItem = (props) => {
             <h2 className={classes.projectTitle} style={{color: uiColor}}>
                 {props.project.projectTitle}
             </h2>
+            <img className={classes.projectImage} src={props.project.projectImage} alt={props.project.projectTitle}/>
             <div className={classes.overlay} style={{backgroundColor: backgroundColor}}>
                 <div className={classes.cardContent}>
                     <div className={classes.descriptionContainer}>

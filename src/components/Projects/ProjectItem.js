@@ -24,16 +24,18 @@ const ProjectItem = (props) => {
     return (
         <Card className={classes.projectItem}>
             <h2 style={{color: uiColor}}>{props.project.projectTitle}</h2>
-            <div className={classes.descriptionContainer}>
-                <p className={classes.description}>{description}</p>
-            </div>
-            <div className={classes.controls}>
-                <div className={classes.projectLink}>
-                    <a target="_blank" rel="noreferrer" href={props.project.sourceLink}
-                       style={{color: nonThemeColor}}><GitHubIcon fontSize="large"/></a>
+            <div className={classes.cardContent}>
+                <div className={classes.descriptionContainer}>
+                    <p className={classes.description}>{description}</p>
                 </div>
-                <p className={classes.dateUpdated} style={{color: nonThemeColor}}>Last Updated On
-                    : {props.project.lastUpdated}</p>
+                <div className={classes.controls}>
+                    <div className={classes.projectLink}>
+                        <a target="_blank" rel="noreferrer" href={props.project.sourceLink}
+                           style={{color: nonThemeColor}}><GitHubIcon fontSize="large"/></a>
+                    </div>
+                    <p className={classes.dateUpdated} style={{color: nonThemeColor}}>Last Updated On
+                        : {props.project.lastUpdated}</p>
+                </div>
             </div>
         </Card>
     )

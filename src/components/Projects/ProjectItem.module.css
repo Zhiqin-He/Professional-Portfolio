@@ -7,6 +7,10 @@
     /* background-color: aqua; */
 }
 
+.cardContent {
+    display: contents;
+}
+
 .itemHeader {
     display: flex;
     justify-content: space-between;
